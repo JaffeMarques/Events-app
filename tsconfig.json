@@ -16,8 +16,14 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "typeRoots": ["./node_modules/@types", "./types"],
-    "lib": ["dom", "es2017"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
@@ -25,8 +31,11 @@
     "sourceRoot": "./src",
     "baseUrl": "./src",
     "paths": {
-      "~public/*": ["../public/*"]
-    }
+      "~public/*": [
+        "../public/*"
+      ]
+    },
+    "incremental": true
   },
   "exclude": [
     "dist",
@@ -41,5 +50,10 @@
     "**/*.test.tsx",
     "coverage"
   ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "tailwind.config.js"
+  ]
 }
