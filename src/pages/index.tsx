@@ -7,6 +7,11 @@ export default function Home() {
       <Button colorScheme="primary" m={10}>
         Click
       </Button>
+ 
     </div>
   </Layout>
 }
+
+
+
+
