@@ -1,4 +1,5 @@
 import "./index.css";
+import "@fontsource/dm-sans";
 import { AppProps } from "next/app";
 import { Chakra } from "systems/Core";
 

@@ -13,6 +13,7 @@ const fonts = {
 
 const theme = extendTheme({
   config,
+  fonts,
   colors: {
     ...colors,
     gray: colors.blueGray,
