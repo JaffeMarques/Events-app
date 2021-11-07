@@ -1,8 +1,9 @@
 import { Layout } from "systems/Core/components/Layout";
-import { gql, useQuery } from "@apollo/client";
+import { gql, QueryResult, useQuery } from "@apollo/client";
 import { css } from "@emotion/react";
 import tw from "twin.macro";
 import { Spinner } from "@chakra-ui/spinner";
+import { Event } from 'strapi-types';
 
 const EVENTS_QUERY = gql`
   query EventsQuery {
@@ -13,14 +14,18 @@ const EVENTS_QUERY = gql`
   }
 `;
 
+type QueryResult = {
+  events: Event[]
+}
+
 export default function Home() {
-  const { loading, error, data } = useQuery(EVENTS_QUERY)
+  const { loading, data } = useQuery<QueryResult>(EVENTS_QUERY)
 
   return (
     <Layout title="Events App">
       {loading ? <div css={styles.root}><Spinner /></div> : (
         <div css={styles.root}>
-          {data?.events.map((event: any) => <div key={event.id}>{event.title}</div>)}
+          {data?.events.map((event) => <div key={event.id}>{event.title}</div>)}
         </div>
       )}
       
